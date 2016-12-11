@@ -1,7 +1,5 @@
 var fs = require('fs');
-
 var input = fs.readFileSync('./day10.txt', "utf8");
-
 input = input.split('\n');
 
 function Bot(high, low, num, lowoutput, highoutput) {
@@ -29,21 +27,13 @@ var output = {};
 input.forEach(line => {
 	line = line.split(' ');
 	if (line[0] === 'bot') {
-		var num = line[1];
-		var low = line[6];
-		var high = line[11];
-		var lowoutput = line[5];
-		var highoutput = line[10];
-		bots[num] = new Bot(high, low, num, lowoutput, highoutput);
+		bots[line[1]] = new Bot(line[11], line[6], line[1], line[5], line[10]);
 	}
 })
 input.forEach(line => {
 	line = line.split(' ');
 	if (line[0] === 'value') {
-		var value = line[1];
-		var num = line[5];
-		bots[num].push(value);
+		bots[line[5]].push(line[1]);
 	}
 })
 console.log(output);
-console.log(31*5*7);
