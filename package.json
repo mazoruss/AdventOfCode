@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/mazoruss/AdventOfCode#readme",
   "dependencies": {
-    "fs": "0.0.1-security"
+    "crypto": "0.0.3",
+    "fs": "0.0.1-security",
+    "md5-base64": "0.0.3"
   }
 }
